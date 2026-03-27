@@ -14,11 +14,18 @@ var timesOfDayEmoji = []string{
 	"🌙",
 }
 
+// var longTimesOfDayStatuses = []string{
+// 	"An Early Bird 🐤",
+// 	"An Afternoon Warrior 🥷🏻",
+// 	"A Twilight Taskmaster 🌆",
+// 	"A Night Owl 🦉",
+// }
+
 var longTimesOfDayStatuses = []string{
-	"An Early Bird 🐤",
-	"An Afternoon Warrior 🥷🏻",
-	"A Twilight Taskmaster 🌆",
-	"A Night Owl 🦉",
+	"an early bird",
+	"an afternoon warrior",
+	"a twilight taskmaster",
+	"a night owl",
 }
 
 var timesOfDayStatuses = []string{

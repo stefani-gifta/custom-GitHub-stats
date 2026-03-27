@@ -125,7 +125,8 @@ func buildWakaData(i []wakatime.StatsItem) []Data {
 
 // MakeLastUpdatedOn returns a string with the last updated time
 func MakeLastUpdatedOn(t string) string {
-	return fmt.Sprintf("\n\n⏳ *Last updated on %s*", t)
+	// return fmt.Sprintf("\n\n⏳ *Last updated on %s*", t)
+	return fmt.Sprintf("\n\n *Last updated on %s*", t)
 }
 
 // MakeCodingStreakList returns coding streak statistics from commit data and WakaTime all-time data
@@ -222,7 +223,8 @@ func MakeCommitTimesOfDayList(commits []github.Commit, simplifyTitle bool, versi
 		}
 
 		data = append(data, Data{
-			Name: fmt.Sprintf("%s %s", timesOfDayEmoji[weekTime], n),
+			// Name: fmt.Sprintf("%s %s", timesOfDayEmoji[weekTime], n),
+			Name: fmt.Sprintf("%s", n),
 			Description: fmt.Sprintf("%s %s", addCommas(weekCommit), func() string {
 				if weekCommit > 1 {
 					return "commits"
@@ -243,7 +245,8 @@ func MakeCommitTimesOfDayList(commits []github.Commit, simplifyTitle bool, versi
 		}
 	}
 
-	return fmt.Sprintf("**🕒 I'm %s**\n\n", status) + "```text" + makeList(data, version) + "```\n\n"
+	// return fmt.Sprintf("**🕒 I'm %s**\n\n", status) + "```text" + makeList(data, version) + "```\n\n"
+	return fmt.Sprintf("I'm %s\n\n", status) + "```text" + makeList(data, version) + "```\n\n"
 }
 
 // MakeCommitDaysOfWeekList returns a list of commits made on each day of the week
@@ -287,7 +290,8 @@ func MakeCommitDaysOfWeekList(wd map[time.Weekday]int, total int, version string
 		})
 	}
 
-	return fmt.Sprintf("**📅 I'm Most Productive on %s**\n\n", topName) + "```text" + makeList(data, version) + "```\n\n"
+	// return fmt.Sprintf("**📅 I'm Most Productive on %s**\n\n", topName) + "```text" + makeList(data, version) + "```\n\n"
+	return fmt.Sprintf("I'm most productive on %s\n\n", topName) + "```text" + makeList(data, version) + "```\n\n"
 }
 
 // MakeLanguagePerRepoList returns a list of languages and the percentage of repositories that use them
@@ -337,7 +341,8 @@ func MakeLanguagePerRepoList(r []github.Repository, version string) string {
 		})
 	}
 
-	return fmt.Sprintf("**🔥 I Mostly Code in %s**\n\n", topName) + "```text" + makeList(data, version) + "```\n\n"
+	// return fmt.Sprintf("**🔥 I Mostly Code in %s**\n\n", topName) + "```text" + makeList(data, version) + "```\n\n"
+	return fmt.Sprintf("My most used language is %s\n\n", topName) + "```text" + makeList(data, version) + "```\n\n"
 }
 
 func makeList(d []Data, version string) string {
